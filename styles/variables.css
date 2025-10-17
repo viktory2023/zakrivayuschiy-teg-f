@@ -1,1 +1,27 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-family: 'PressStart2P-Regular';
+    --font-family-variable: 'Inter';
+    --background-gradient-horizontal: repeating-linear-gradient(to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px );
+    --background-gradient-vertical: repeating-linear-gradient(to bottom,  #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px );
+    --background-gradient-transitional: linear-gradient(to bottom,#e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+    --background-gradient-united: var(--background-gradient-horizontal), var(--background-gradient-vertical), var(--background-gradient-transitional);
+    --header-title-group-width: clamp(30rem, 43.75rem, 56rem);
+    --header-title-group-height: clamp(16rem, 23rem, 32rem);
+    --header-title-group-top: clamp(3rem, 6.25rem, 9rem);
+    --group-left: clamp(0rem, -8.14rem + 34.74vw, 23.125rem);
+    --header-title-group-background-color: #ffff;
+    --header-title-group-border-width: 2px;
+    --header-title-font-size: clamp(3.0625rem, 2.71rem + 1.50vw, 4.0625rem);
+    --header-subtitle-font-size: clamp(0.875rem, 0.68rem + 0.85vw, 1.4375rem);
+    --main-section-group-width: clamp(23.4375rem, 16.29rem + 30.52vw, 43.75rem);
+    --main-section-group-height: clamp(47.375rem, 43.02rem + 18.59vw, 59.75rem);
+    --main-section-group-top: clamp(6.125rem, 6.29rem + -0.19vw, 6.25rem);
+    --main-section-group-title-font-size: 18px;
+    --button-text-color: #000000;
+    --button-bg-color: #ffff;
+    --main-end-button-margin: 0 clamp(2.15625rem, -1.10rem + 13.90vw, 11.40625rem);
+    --main-margin-block-end: 100px;
+    --modal-background-color: #000000;
+    --main-margin-block-padding-buttom: clamp(116px, 89.33px + 2.22vw, 132px);
+}
