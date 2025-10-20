@@ -20,6 +20,13 @@
   background-attachment: fixed;
 }
 
+.page__inner {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+  box-sizing: border-box;
+}
 
 .header-title-group {
   display: flex;
@@ -28,7 +35,7 @@
   inline-size: var(--header-title-group-width);
   block-size: var(--header-title-group-height);
   margin-top: var(--header-title-group-top);
-  margin-left: var(--group-left);
+  margin-inline: auto;
   background-color: var(--header-title-group-background-color);
   outline: var(--header-title-group-border-width) solid #000000;
   text-align: center;
@@ -51,7 +58,7 @@
 .main {
   margin-top: var(--main-section-group-top);
   inline-size: var(--main-section-group-width);
-  margin-left: var(--group-left);
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   margin-block-end: var(--main-margin-block-end);
@@ -80,7 +87,7 @@
 .main-section-title {
   font-family: var(--font-family-variable);
   font-size: var(--main-section-group-title-font-size);
-  font-variation-settings: "wght" 700;
+  font-variation-settings: "wght" 715;
   line-height: 19px;
   margin-block-start: 2px;
   padding: 6px 12px;
@@ -117,7 +124,17 @@
   opacity: 0.5;
 }
 
-.main-section-image_watermark::before {
+@supports ((-webkit-text-stroke: 1px #FFFFFF) or (text-stroke: 1px #FFFFFF)) {
+  .main-section-watermark {
+    -webkit-text-stroke: 1px #FFFFFF;
+    text-stroke: 1px #FFFFFF;
+    text-shadow: none;
+  }
+}
+
+.main-section-image_watermark::before,
+.main-modal-button::before,
+.card__like-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -128,6 +145,7 @@
   pointer-events: none;
   z-index: 1;
 }
+
 
 .bus_grayscale {
   filter: grayscale(70%);
@@ -175,36 +193,28 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  bottom: 25px;
-  right: 27px;
+  margin-right: 27px;
+  margin-top: -25px;
+  margin-block-end: 25px;
 }
 
-.card__like-button {
+.button {
   position: relative;
   background-color: var(--button-bg-color, #ffff);
   color: var(--button-text-color);
   border: none;
-  padding: 12.5px 37px;
-  font-weight: 700;
-  line-height: 90%;
   font-size: 14px;
-  cursor: pointer;
+  line-height: 90%;
   overflow: hidden;
-}
-
-.card__like-button::before {
-  content: '';
-  position: absolute;
-  border: var(--header-title-group-border-width) solid #000000;
-  pointer-events: none;
-  z-index: 1;
-  inset: 0;
+  cursor: pointer;
 }
 
 
-.card__like-button::after,
-.main-end-button::after,
-.main-modal-button::after  {
+.card__like-button {
+  padding: 12.5px 37px;
+}
+
+.button::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -214,25 +224,19 @@
   z-index: 1;
 }
 
-
-.card__like-button:hover::after,
-.main-end-button:hover::after,
-.main-modal-button:hover::after {
+.button:hover::after {
   transform: translateX(0);
 }
 
-
-.card__like-button span,
-.card__like-button svg,
-.main-end-button span,
-.main-modal-button span  {
+.button span,
+.card__like-button svg {
   position: relative;
   z-index: 3;
   mix-blend-mode: difference;
   color: var(--text-color, #fff);
 }
 
-.card__like-button:focus {
+.button:focus {
   border: none;
   box-shadow: 2px 2px 0px #000000;
   transition: transform 0.3s ease;
@@ -241,7 +245,6 @@
 .card__icon-button {
   background: none;
   border: none;
-  cursor: pointer;
 }
 
 .card__icon-button:focus {
@@ -253,22 +256,14 @@
 }
 
 
-
 .main-end-button {
-  position: relative;
-  background-color: var(--button-bg-color);
-  border: none;
   padding: 15px 20px;
-  font-size: 14px;
   align-items: center;
   display: flex;
   flex-direction: row;
   gap: 3.5px;
-  border: var(--header-title-group-border-width) solid #000000;
   margin: var(--main-end-button-margin);
-  font-size: 14px;
-  line-height: 90%;
-  overflow: hidden;
+  border: var(--header-title-group-border-width) solid #000000;
 }
 
 
@@ -288,7 +283,6 @@ dialog[open] {
 
 dialog::backdrop {
   background-color: var(--modal-background-color);
-  opacity: 0.5;
 }
 
 .main_dialog-content {
@@ -304,7 +298,6 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 150%;
   width: 234px;
-  height: 63px;
 }
 
 .main_dialog-content-svg {
@@ -313,13 +306,31 @@ dialog::backdrop {
 }
 
 .main-modal-button {
-  position: relative;
   background-color: transparent;
-  border: none;
   padding: 12px var(--main-margin-block-padding-buttom);
   text-transform: uppercase;
-  line-height: 90%;
-  border: var(--header-title-group-border-width) solid #000000;
   margin-block-end: var(--main-end-button-margin);
-  overflow: hidden;
+}
+
+.main_dialog-content-svg {
+  color: #000;
+}
+
+.main-floppy_dialog {
+  width: 39px;
+  height: 39px;
+}
+
+@media (width <=376px) {
+  .main-end-button {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 20px;
+    gap: 8px;
+  }
+
+  .main-floppy_button {
+    width: 28px;
+    height: 28px;
+  }
 }
