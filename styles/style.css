@@ -242,8 +242,7 @@
 }
 
 .button:hover svg {
-  color: #fff;
-  mix-blend-mode: difference;
+  filter: brightness(0) invert(1);
 }
 
 .button:focus {
@@ -293,7 +292,6 @@ dialog[open] {
   justify-content: center;
   border: var(--header-title-group-border-width) solid #000000;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 dialog::backdrop {
