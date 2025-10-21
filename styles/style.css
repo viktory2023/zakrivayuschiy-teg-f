@@ -214,10 +214,6 @@
   white-space: nowrap;
 }
 
-.button:focus {
-  outline: none;
-}
-
 .card__like-button {
   padding: 12.5px 37px;
 }
@@ -253,7 +249,7 @@
 }
 
 .button:focus {
-  border: none;
+  outline: none;
   box-shadow: 2px 2px 0px #000000;
   transition: transform 0.3s ease;
 }
@@ -262,7 +258,6 @@
   background: none;
   border: none;
 }
-
 
 .card__icon-button:focus {
   border: none;
@@ -282,7 +277,6 @@
   margin: var(--main-end-button-margin);
   border: var(--header-title-group-border-width) solid #000000;
 }
-
 
 dialog {
   display: none;
