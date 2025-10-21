@@ -254,6 +254,12 @@
   transition: transform 0.3s ease;
 }
 
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000000;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
 .card__icon-button {
   background: none;
   border: none;
@@ -263,7 +269,6 @@
   border: none;
   padding: 0;
   outline: var(--header-title-group-border-width) solid #000000;
-  transition: transform 0.3s ease;
   margin-right: 7px;
 }
 
@@ -284,12 +289,13 @@ dialog {
 
 dialog[open] {
   inline-size: clamp(341px, 321.00px + 1.67vw, 353px);
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   border: var(--header-title-group-border-width) solid #000000;
   position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 dialog::backdrop {
@@ -301,7 +307,6 @@ dialog::backdrop {
   flex-direction: row;
   gap: 20px;
   margin-block-end: 30px;
-  margin-block-start: 15px;
 }
 
 .main_dialog-content-text {
@@ -311,22 +316,20 @@ dialog::backdrop {
   width: 234px;
 }
 
-.main_dialog-content-svg {
-  width: auto;
-  height: auto;
-}
-
 .main-modal-button {
   background-color: transparent;
   padding: 12px var(--main-margin-block-padding-buttom);
   text-transform: uppercase;
   margin-block-end: var(--main-end-button-margin);
+  width: clamp(261px, 249.73px + 3.00vw, 293px);
+  height: 38px;
 }
 
 
 .main-floppy_dialog {
   width: 39px;
   height: 39px;
+  margin-block-start: 12px;
 }
 
 
@@ -353,5 +356,10 @@ dialog::backdrop {
   .main-floppy_button {
     width: 28px;
     height: 28px;
+  }
+
+  dialog[open] {
+    top: 30%;
+    padding: 30px 40px;
   }
 }
