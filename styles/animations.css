@@ -64,7 +64,6 @@
 }
 
 .like-icon.is-liked {
-    transition: all 0.7s;
     animation: change-scale 0.3s 0.1s ease-in;
 }
 
@@ -77,6 +76,7 @@
     from {
         transform: scale(1);
     }
+
     to {
         transform: scale(1.25);
     }
@@ -86,6 +86,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

@@ -68,8 +68,9 @@
   position: relative;
   min-block-size: auto;
   background-color: #ffffff;
-  overflow: auto;
-  margin-block-end: 51px;
+  background-clip: padding-box;
+  margin-block-end: 50px;
+  padding-bottom: 1px;
 }
 
 .main-section::before {
@@ -92,6 +93,8 @@
   margin-block-start: 2px;
   padding: 6px 12px;
 }
+
+
 
 .main-section-image_watermark {
   position: relative;
@@ -205,8 +208,10 @@
   border: none;
   font-size: 14px;
   line-height: 90%;
+  letter-spacing: 0%;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 
@@ -246,6 +251,7 @@
   background: none;
   border: none;
 }
+
 
 .card__icon-button:focus {
   border: none;
@@ -312,16 +318,25 @@ dialog::backdrop {
   margin-block-end: var(--main-end-button-margin);
 }
 
-.main_dialog-content-svg {
-  color: #000;
-}
-
 .main-floppy_dialog {
   width: 39px;
   height: 39px;
 }
 
+
 @media (width <=376px) {
+  .main-section {
+    padding-bottom: 0;
+  }
+
+  .main-section-title {
+    line-height: 20px;
+  }
+
+  .main-section-image {
+    max-height: 371px;
+  }
+
   .main-end-button {
     display: flex;
     flex-direction: column;
