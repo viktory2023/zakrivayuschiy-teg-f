@@ -233,7 +233,7 @@
   transform: translateX(0);
 }
 
-.button:hover span{
+.button:hover span {
   position: relative;
   z-index: 3;
   mix-blend-mode: difference;
