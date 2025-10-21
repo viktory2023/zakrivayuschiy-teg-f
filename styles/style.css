@@ -233,12 +233,20 @@
   transform: translateX(0);
 }
 
-.button span,
-.card__like-button svg {
+.button:hover span{
   position: relative;
   z-index: 3;
   mix-blend-mode: difference;
-  color: var(--text-color, #fff);
+  color: var(--button-text-colorr, #fff);
+}
+
+.button svg {
+  z-index: 3;
+}
+
+.button:hover svg {
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
 .button:focus {
