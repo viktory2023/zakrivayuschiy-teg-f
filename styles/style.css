@@ -180,7 +180,7 @@
 
 .section-text {
   position: relative;
-  padding: 27px;
+  padding: 27px 27px 0 27px;
 }
 
 .main-section-text {
@@ -188,7 +188,7 @@
   font-variation-settings: "wght" 410;
   line-height: 21px;
   font-size: 18px;
-  margin-block-end: 25px;
+  margin-block-end: 26px;
 }
 
 .card {
@@ -197,7 +197,6 @@
   align-items: center;
   justify-content: flex-end;
   margin-right: 27px;
-  margin-top: -25px;
   margin-block-end: 25px;
 }
 
@@ -208,7 +207,6 @@
   border: none;
   font-size: 14px;
   line-height: 90%;
-  letter-spacing: 0%;
   overflow: hidden;
   cursor: pointer;
   white-space: nowrap;
