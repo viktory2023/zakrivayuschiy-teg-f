@@ -18,6 +18,7 @@
   background-image: var(--background-gradient-united);
   background-size: cover;
   background-attachment: fixed;
+  font-variation-settings: "wght" 410;
 }
 
 .page__inner {
@@ -185,7 +186,6 @@
 
 .main-section-text {
   font-family: var(--font-family-variable);
-  font-variation-settings: "wght" 410;
   line-height: 21px;
   font-size: 18px;
   margin-block-end: 26px;
@@ -230,19 +230,12 @@
   transform: translateX(0);
 }
 
-.button:hover span {
+.button span,
+.button svg {
   position: relative;
   z-index: 3;
   mix-blend-mode: difference;
-  color: var(--button-text-colorr, #fff);
-}
-
-.button svg {
-  z-index: 3;
-}
-
-.button:hover svg {
-  filter: brightness(0) invert(1);
+  color: var(--button-text-colorr, #ffff);
 }
 
 .button:focus {
@@ -260,6 +253,7 @@
 .card__icon-button {
   background: none;
   border: none;
+  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -285,7 +279,6 @@ dialog {
 }
 
 dialog[open] {
-  inline-size: clamp(341px, 321.00px + 1.67vw, 353px);
   padding: 30px;
   display: flex;
   flex-direction: column;
